@@ -7,3 +7,9 @@ int FeetToInches(int feet)
     int inches = feet * 12;
     return inches;
 }
+
+SayHello();
+void SayHello()
+{
+    Console.WriteLine("Hello World!");
+}
