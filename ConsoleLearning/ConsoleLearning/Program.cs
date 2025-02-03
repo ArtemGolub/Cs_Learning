@@ -1,15 +1,8 @@
-﻿using System;
+﻿using ConsoleLearning;
 
-Console.WriteLine(FeetToInches(30));
-Console.WriteLine(FeetToInches(100));
-int FeetToInches(int feet)
-{
-    int inches = feet * 12;
-    return inches;
-}
+UnitConverter feetToInchesConverter = new UnitConverter(12);
+UnitConverter milesToFettConverter = new UnitConverter(5280);
 
-SayHello();
-void SayHello()
-{
-    Console.WriteLine("Hello World!");
-}
+Console.WriteLine(feetToInchesConverter.Convert(30));
+Console.WriteLine(feetToInchesConverter.Convert(100));
+Console.WriteLine(feetToInchesConverter.Convert(milesToFettConverter.Convert(1)));
