@@ -1,8 +1,9 @@
 ﻿using ConsoleLearning;
 
-UnitConverter feetToInchesConverter = new UnitConverter(12);
-UnitConverter milesToFettConverter = new UnitConverter(5280);
+Panda p1 = new Panda("Panda 1");
+Panda p2 = new Panda("Panda 2");
 
-Console.WriteLine(feetToInchesConverter.Convert(30));
-Console.WriteLine(feetToInchesConverter.Convert(100));
-Console.WriteLine(feetToInchesConverter.Convert(milesToFettConverter.Convert(1)));
+Console.WriteLine(p1.Name);
+Console.WriteLine(p2.Name);
+
+Console.WriteLine(Panda.Population);
