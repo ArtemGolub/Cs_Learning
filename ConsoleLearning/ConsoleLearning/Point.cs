@@ -1,6 +1,6 @@
 namespace ConsoleLearning;
 
-public struct Point
+public class Point
 {
     public int X;
     public int Y;
