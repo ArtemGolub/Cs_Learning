@@ -1,0 +1,51 @@
+# Системные файлы/папки
+.DS_Store
+Thumbs.db
+
+# Файлы конфигурации IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Вывод сборки
+bin/
+obj/
+out/
+
+# Папки пакетов NuGet
+*.nupkg
+*.snupkg
+packages/
+.project
+
+# Файлы журнала и временные файлы
+*.log
+*.tmp
+*.temp
+
+# Конфигурации блокировок
+project.lock.json
+project.fragment.lock.json
+
+# Файлы сборки и хэши
+*.build.cs
+*.ilk
+*.ipdb
+*.pdb
+*.cache
+*.mdb
+
+# Конфигурация маршрутизации систем
+*.DotSettings
+*.DotSettings.user
+
+# Закэшированные и временные файлы
+*.db
+*.tfvars
+*.suo
+
+# User-specific dependency information
+*.vs/
