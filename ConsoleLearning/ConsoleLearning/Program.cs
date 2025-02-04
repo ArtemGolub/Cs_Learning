@@ -1,8 +1,6 @@
-﻿int a = 1000000;
-int b = 1000000;
-
-int c;
-checked
+﻿int x = int.MaxValue;
+int y = unchecked(x + 1);
+unchecked
 {
-    c = a * b;
+    int z = x + 1;
 }
