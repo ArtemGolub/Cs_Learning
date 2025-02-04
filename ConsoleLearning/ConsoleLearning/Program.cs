@@ -1,4 +1,8 @@
-﻿int a = 2 /3;
+﻿int a = 1000000;
+int b = 1000000;
 
-int b = 0;
-int c = 5 / b;
+int c;
+checked
+{
+    c = a * b;
+}
