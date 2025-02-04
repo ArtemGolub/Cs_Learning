@@ -1,16 +1,14 @@
-﻿using ConsoleLearning.BoolOperations;
+﻿
+char c = 'A';
+char newLine = '\n' ;
+char backSlash = '\\' ;
 
+char charNumber = '1';
 
-Console.WriteLine(CountMax.Max(1,2));
+ushort ushortNumber = charNumber;
+int intNumber = charNumber;
+uint uintNumber = charNumber;
+long longNumber = charNumber;
+ulong ulongNumber = charNumber;
 
-
-Dude d1 = new Dude("John");
-Dude d2 = new Dude("John"); // одно имя с d1
-
-Console.WriteLine(d1 == d2);
-Dude d3 = d1;
-Console.WriteLine(d1 == d3);
-
-Console.WriteLine(UmbrellaCheck.UseUmbrella(false, true, false));
-string str = null;
-int length = str.Length;
+sbyte floatNumber = (sbyte)charNumber;
