@@ -1,4 +1,4 @@
-namespace ConsoleLearning;
+namespace ConsoleLearning.Variables;
 
 public class Panda
 {
