@@ -48,4 +48,4 @@ project.fragment.lock.json
 *.suo
 
 # User-specific dependency information
-*.vs/
+*.vs/obj/
