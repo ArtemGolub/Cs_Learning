@@ -1,14 +1,3 @@
-﻿using ConsoleLearning;
-
-Point p1 = new Point();
-p1.X = 7;
-Point p2 = p1; // присваивание приводит к копированию
-
-
-Console.WriteLine(p1.X); // 7
-Console.WriteLine(p2.X); // 7
-
-p1.X = 9; // изменяем p1.X
-
-Console.WriteLine(p1.X); // 9
-Console.WriteLine(p2.X); // 7
+﻿int x = 12345; // int 32-битный целочисленный тип | 4 байта памяти
+long y = x; // Неявное преобразование в 64-битный целочисленный тип | 8 байт памят
+short z = (short)x; // Явное преобразование в 16-битный целочисленный тип | 2 байта памяти
