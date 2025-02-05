@@ -1,5 +1,14 @@
-﻿using ConsoleLearning.ArrayOperations;
+﻿char[] vowels = ['a', 'b', 'c', 'd', 'e'];
 
-Point[] a = new Point[1000];
-int x = a[500].X;
-Console.WriteLine(x.ToString());
+Index first = 0;
+Index last = ^1;
+
+char firstElement = vowels[first];
+char lastElement = vowels[last];
+
+for (int i = 1; i <= vowels.Length; i++)
+{
+    Index index = ^i;
+    Console.WriteLine($"{vowels[index]}");
+}
+
