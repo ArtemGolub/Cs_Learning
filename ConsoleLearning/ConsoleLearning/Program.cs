@@ -1,11 +1,16 @@
-﻿using System.Text;
+﻿using ConsoleLearning.Variables;
 
-StringBuilder ref1 = new StringBuilder("object1");
-Console.WriteLine(ref1);
-// Объект StringBuilder, на который ссылается ref1, теперь пригоден для сборки мусора
+class Program
+{
+    int instanceValue = 10; // Поле экземпляра класса — хранится в куче
+    static int staticValue = 20; // Статическое поле — хранится в куче но существует пока не завершится процесс
 
+    static void Main()
+    {
+        int localValue = 30; // Локальная переменная типа значения — хранится в стеке
+        Point point = new Point { X = 1, Y = 2 }; // Структура в локальной переменной (стек)
 
-StringBuilder ref2 = new StringBuilder("object2");  
-StringBuilder ref3 = ref2; /* Объект StringBuilder, на которые ссылается ref2,
-                                    пока еще НЕ пригоден для сборки мусора */
-Console.WriteLine(ref3);
+        Console.WriteLine($"Локальная переменная: {localValue}");
+        Console.WriteLine($"Point.X: {point.X}, Point.Y: {point.Y}");
+    }
+}
