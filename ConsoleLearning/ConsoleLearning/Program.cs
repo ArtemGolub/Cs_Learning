@@ -1,4 +1,6 @@
-﻿void Foo(int x = 0, int y = 0, int z = 0, int c = 0) { Console.WriteLine($"{x} , {y}, {z}, {c}");}
+﻿int[] numbers = [1, 2, 3, 4, 5];
+ref int numRef = ref numbers[2];
 
-Foo(z: 3);
-
+numRef *= 10;
+Console.WriteLine(numRef); // 30
+Console.WriteLine(numbers[2]); // 30
