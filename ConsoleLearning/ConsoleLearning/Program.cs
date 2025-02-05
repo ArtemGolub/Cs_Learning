@@ -1,17 +1,11 @@
-﻿var vowels = new[] { 'a', 'b', 'c', 'd', 'e' };
+﻿using System.Text;
 
-var rectangulraMatrix = new[,]
-{
-    { 0, 1, 2 },
-    { 3, 4, 5 },
-    { 6, 7, 8 }
-};
-
-var jaggedMatrix = new int[][]
-{
-    new int[] { 0, 1, 2 },
-    new int[] { 3, 4, 5 },
-    new int[] { 6, 7, 8, 9 }
-};
+StringBuilder ref1 = new StringBuilder("object1");
+Console.WriteLine(ref1);
+// Объект StringBuilder, на который ссылается ref1, теперь пригоден для сборки мусора
 
 
+StringBuilder ref2 = new StringBuilder("object2");  
+StringBuilder ref3 = ref2; /* Объект StringBuilder, на которые ссылается ref2,
+                                    пока еще НЕ пригоден для сборки мусора */
+Console.WriteLine(ref3);
