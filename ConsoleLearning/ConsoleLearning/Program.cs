@@ -1,19 +1,9 @@
-﻿TelleMeTheType(false);
-TelleMeTheType(true);
-
-void TelleMeTheType(object x)
+﻿int cardNumber = 12;
+string suit = "spades";
+string cardName = (cardNumber, suit) switch
 {
-    switch (x)
-    {
-        case bool b when b == true:
-        {
-            Console.WriteLine($"b == true");
-            break;
-        }
-        case bool b:
-        {
-            Console.WriteLine($"false");
-            break;
-        }
-    }
-}
+    (12, "spades") => "12 spades",
+    (12, "clubs") => "12 clubs",
+    _ => "Pip card"
+};
+Console.WriteLine($"Card name: {cardName}");
