@@ -1,24 +1,18 @@
-﻿TelleMeTheType(12);
-TelleMeTheType(" ");
-TelleMeTheType(DateTime.Now);
+﻿TelleMeTheType(false);
+TelleMeTheType(true);
 
 void TelleMeTheType(object x)
 {
     switch (x)
     {
-        case int i:
+        case bool b when b == true:
         {
-            Console.WriteLine($"int");
+            Console.WriteLine($"b == true");
             break;
         }
-        case string s:
+        case bool b:
         {
-            Console.WriteLine($"string");
-            break;
-        }
-        case DateTime:
-        {
-            Console.WriteLine("dt");
+            Console.WriteLine($"false");
             break;
         }
     }
