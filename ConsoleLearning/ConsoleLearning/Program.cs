@@ -1,9 +1,6 @@
-﻿int cardNumber = 12;
-string suit = "spades";
-string cardName = (cardNumber, suit) switch
+﻿int i = 0;
+do
 {
-    (12, "spades") => "12 spades",
-    (12, "clubs") => "12 clubs",
-    _ => "Pip card"
-};
-Console.WriteLine($"Card name: {cardName}");
+    Console.WriteLine(i);
+    i++;
+} while (i < 3);
