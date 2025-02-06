@@ -1,6 +1,7 @@
-﻿int i = 0;
-do
+﻿for (int i = 0, prevFib = 1, cureFib = 1; i < 10; i++)
 {
-    Console.WriteLine(i);
-    i++;
-} while (i < 3);
+    Console.WriteLine(prevFib);
+    int newFib = prevFib + cureFib;
+    prevFib = cureFib;
+    cureFib = newFib;
+}
