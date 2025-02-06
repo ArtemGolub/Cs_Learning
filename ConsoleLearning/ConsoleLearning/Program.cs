@@ -1,25 +1,25 @@
-﻿using System.Text;
+﻿TelleMeTheType(12);
+TelleMeTheType(" ");
+TelleMeTheType(DateTime.Now);
 
-class Program
+void TelleMeTheType(object x)
 {
-    private static string myVariable = null;
-    private static string someDefault = "Default";
-   
-    static void Main()
+    switch (x)
     {
-        string s1 = null;
-        string s2 = s1 ?? "nothing";
-        Console.WriteLine(s2);
-        
-        myVariable ??= someDefault;
-        Console.WriteLine(myVariable);
-
-        StringBuilder sb = null;
-        string s = sb?.ToString() ?? "nothing";
-
-        string[] words = null;
-        string word = words?[1];
-        
-        
+        case int i:
+        {
+            Console.WriteLine($"int");
+            break;
+        }
+        case string s:
+        {
+            Console.WriteLine($"string");
+            break;
+        }
+        case DateTime:
+        {
+            Console.WriteLine("dt");
+            break;
+        }
     }
 }
