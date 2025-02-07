@@ -1,9 +1,5 @@
 ﻿using ConsoleLearning.inheritance;
 
-Stock msft = new Stock
-{
-    Name = "MSFT",
-    SharesOwned = 1000
-};
 
-Asset.Display(msft);
+Asset a = new Asset();
+Stock s = a as Stock;
