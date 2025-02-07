@@ -1,5 +1,9 @@
-﻿using ConsoleLearning.Classes;
+﻿using ConsoleLearning.inheritance;
 
-PaymentForm paymentForm = new PaymentForm(b: "Test");
-paymentForm.Method1();
-paymentForm.Method2();
+Stock msft = new Stock
+{
+    Name = "MSFT",
+    SharesOwned = 1000
+};
+
+Asset.Display(msft);
