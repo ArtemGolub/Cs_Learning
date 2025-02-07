@@ -1,7 +1,6 @@
 namespace ConsoleLearning.inheritance;
 
-public class House: Asset
+public class House
 {
     public decimal Mortgage;
-    public override decimal NetValue { get; }
 }
