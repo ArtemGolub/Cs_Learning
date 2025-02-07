@@ -1,9 +1,6 @@
-﻿
-using ConsoleLearning.Classes;
+﻿using ConsoleLearning.Classes;
 
-Bunny b1 = new Bunny
+Stock stock = new Stock
 {
-    Name = "Bunny1",
-    LikesCarrots = true,
-    LikesHumans = false
-} ;
+    CurrentPrice = 100
+};
