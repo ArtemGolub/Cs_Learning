@@ -1,5 +1,5 @@
 ﻿using ConsoleLearning.Classes;
 
-
-
-StaticInitTest test = new StaticInitTest();
+PaymentForm paymentForm = new PaymentForm(b: "Test");
+paymentForm.Method1();
+paymentForm.Method2();
