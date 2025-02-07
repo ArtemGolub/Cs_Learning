@@ -1,5 +1,9 @@
-﻿using ConsoleLearning.Classes;
+﻿
+using ConsoleLearning.Classes;
 
-Rectangle rectangle = new Rectangle(3,4);
-var (_, height) = rectangle; // деконструирование
-Console.WriteLine($" + {height}");
+Bunny b1 = new Bunny
+{
+    Name = "Bunny1",
+    LikesCarrots = true,
+    LikesHumans = false
+} ;
