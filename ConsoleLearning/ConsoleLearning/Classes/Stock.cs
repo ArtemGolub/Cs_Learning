@@ -2,7 +2,11 @@ namespace ConsoleLearning.Classes;
 
 public class Stock
 { 
-    private decimal _currentPrice, sharesOwned;
+    private decimal _currentPrice;
 
-    public decimal CurrentPrice { get; init; } = 20;
+    public decimal CurrentPrice
+    {
+        get => _currentPrice;
+        init => _currentPrice = value;
+    } 
 }
