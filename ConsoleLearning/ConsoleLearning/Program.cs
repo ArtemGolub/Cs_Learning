@@ -1,6 +1,6 @@
 ﻿using ConsoleLearning.Interfaces;
 
-Redoable r = new Redoable();
-r.Do();
-((IRedoable)r).Do();
-((IUndoable)r).Do();
+RichTextBox r = new RichTextBox();
+r.Undo();
+((IUndoable)r).Undo();
+((TextBox)r).Undo();
