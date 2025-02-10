@@ -1,7 +1,6 @@
 namespace ConsoleLearning.Variables;
 
-public class Point
+ref struct Point
 {
-    public int X;
-    public int Y;
+    public int X, Y;
 }
