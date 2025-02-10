@@ -1,26 +1,6 @@
-﻿using ConsoleLearning.inheritance;
+﻿using ConsoleLearning.ObjectTypes;
 
-Asset newAsset = new Asset("Name");
-Asset a2 = new Asset
-{
-    Name = "Name 2" 
-};
-
-
-public class B
-{
-    public int x = 1; // Выполняется третьим
-
-    public B(int x)
-    {
-        // выполняется четвертым
-    }
-}
-public class D : B
-{
-    private int y = 1; // Выполняется первым
-    public D(int x) : base (x + 1) // Выполняется вторым
-    {
-        // Выполняется пятым
-    }
-}
+Stack stack = new Stack();
+stack.Push("Sausage");
+string s = (string)stack.Pop();
+Console.WriteLine(s);
