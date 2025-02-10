@@ -1,6 +1,2 @@
-﻿using ConsoleLearning.ObjectTypes;
-
-Stack stack = new Stack();
-stack.Push("Sausage");
-string s = (string)stack.Pop();
-Console.WriteLine(s);
+﻿object obj = 3.5;
+int x = (int) (double)obj;
