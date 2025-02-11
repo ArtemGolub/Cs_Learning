@@ -1,9 +1,12 @@
 namespace ConsoleLearning.Enums;
 
+[Flags]
 public enum BorderSide: byte
 {
-    Left = 0,
-    Right = 1,
-    Top = 2,
-    Bottom = 3
+    None = 0,
+    Left = 1,
+    Right = 1<<1,
+    Top = 1<<2,
+    Bottom = 1<<3,
+    All = Left | Right | Top | Bottom
 }
