@@ -1,25 +1,10 @@
-namespace ConsoleLearning.GenericTypes;
+public class SomeClass { }
 
-public class A { }
-public class A<T> where T: A { }
+interface IInterface { }
 
-public interface I { }
-public class B<T> where T: I { }
-
-
-public class C<T> where T: class { }
-
-
-public class E<T> where T: class? { }
-
-
-public class D<T> where T: struct { }
-
-
-public class R<T> where T: unmanaged { }
-
-
-public class S<T> where T: new() { }
-
-
-public class Z<T> where T: notnull { }
+class GenericClass<T,U> where T: SomeClass, IInterface
+                        where U: new()
+{
+    
+    
+}
