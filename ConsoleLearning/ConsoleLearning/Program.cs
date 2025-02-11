@@ -1,4 +1,4 @@
 ﻿using ConsoleLearning.GenericTypes;
 
-var defaultInt = MyStack<int>.GetDefaultValue();
-var dfaultString = MyStack<string>.GetDefaultValue();
+Type a1 = typeof(A<>);
+Type a2 = typeof(A<,>);
