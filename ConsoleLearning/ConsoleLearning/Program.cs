@@ -1,4 +1,8 @@
-﻿using ConsoleLearning.Enums;
+﻿using ConsoleLearning.GenericTypes;
 
-BorderSide side = BorderSide.Left | BorderSide.Right;
-Console.WriteLine(side);
+var intStack = new Stack<int>();
+intStack.Push(5);
+intStack.Push(10);
+
+int x = intStack.Pop();
+int y = intStack.Pop();
