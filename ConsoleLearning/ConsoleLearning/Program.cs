@@ -1,4 +1,6 @@
-﻿using ConsoleLearning.GenericTypes;
+﻿using ConsoleLearning.SpecialTypes;
 
-Type a1 = typeof(A<>);
-Type a2 = typeof(A<,>);
+MathOperations mathOperations = new MathOperations();
+Transformer t = mathOperations.Square;
+int answer = t(5);
+Console.WriteLine(answer);
