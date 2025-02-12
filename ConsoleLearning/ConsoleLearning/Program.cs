@@ -1,12 +1,11 @@
 ﻿using ConsoleLearning.SpecialTypes;
 
-Func<int, int> square = x => x * x;
+Action<int> printSquare = x => Console.WriteLine(x * x); /* Создаем Action где
+                                                int = входное значение,
+                                              никакого выхода (void), он просто выполняет действие */
 
-int result = ExecuteDelegate(square, 4);
-Console.WriteLine(result);
+void ExecuteAction(Action<int> action, int value) => action(value); /* Вызываем Action
+                                                с указываемым параметром int value */
 
+ExecuteAction(printSquare, 4); // Вызываем Action printSquare
 
-int ExecuteDelegate(Func<int, int> func, int value)
-{
-    return func(value);
-}
