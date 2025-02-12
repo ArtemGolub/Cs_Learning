@@ -1,7 +1,10 @@
 ﻿using ConsoleLearning.SpecialTypes;
 
-Transformer transformer = MathOperations.Square;
-Console.WriteLine(transformer(2));
-transformer += MathOperations.Quad;
-Console.WriteLine(transformer(2));
+int[] values = { 1, 2, 3};
+Util.Transfrom(values, MathOperations.Square);
+
+foreach (int index in values)
+{
+    Console.WriteLine(index + " ");
+}
 
