@@ -1,11 +1,11 @@
 namespace ConsoleLearning.SpecialTypes;
 
-public delegate T Transformer<T>(T arg);
+public delegate int Transformer(int arg);
 
 
 public class Util
 {
-    public static void Transfrom<T>(T[] values, Transformer<T> transformer)
+    public static void Transfrom<T>(T[] values, Func<T, T> transformer)
     {
         for (int i = 0; i < values.Length; i++)
         {

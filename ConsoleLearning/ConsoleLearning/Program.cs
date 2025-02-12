@@ -1,10 +1,12 @@
 ﻿using ConsoleLearning.SpecialTypes;
 
-int[] values = { 1, 2, 3};
-Util.Transfrom(values, MathOperations.Square);
+Func<int, int> square = x => x * x;
 
-foreach (int index in values)
+int result = ExecuteDelegate(square, 4);
+Console.WriteLine(result);
+
+
+int ExecuteDelegate(Func<int, int> func, int value)
 {
-    Console.WriteLine(index + " ");
+    return func(value);
 }
-
