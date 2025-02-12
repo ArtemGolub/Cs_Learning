@@ -1,13 +1,7 @@
 ﻿using ConsoleLearning.SpecialTypes;
 
-MyReporter reporter = new MyReporter();
-reporter.Prefix = "% Completed: ";
+Transformer transformer = MathOperations.Square;
+Console.WriteLine(transformer(2));
+transformer += MathOperations.Quad;
+Console.WriteLine(transformer(2));
 
-ProgressReporter progressReporter = reporter.ReportProgress;
-progressReporter(90);
-
-Console.WriteLine(progressReporter.Target == reporter);
-Console.WriteLine(progressReporter.Method);
-
-reporter.Prefix = " ";
-progressReporter(1);
