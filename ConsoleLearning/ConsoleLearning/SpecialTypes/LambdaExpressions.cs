@@ -15,10 +15,12 @@ public class LambdaExpressions
 
 
 
-    void Print(string message = " ") => Console.WriteLine(message);
+
+    
+    
     public void MyMethod()
     {
-        Print("Hello");
-        Print();
+        Func<int, int> multiplier = static n => n * 2;
+        static int Multiply(int x) => x * 2;
     }
 }
