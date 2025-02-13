@@ -5,11 +5,16 @@ public class Stock(string symbol)
     private readonly string _symbol = symbol;
     private decimal _price;
 
-    public event EventHandler<PriceChangedEventArgs> PriceChanged;
+    private EventHandler<PriceChangedEventArgs> _priceChanged;
+    public event EventHandler<PriceChangedEventArgs> PriceChanged
+    {
+        add { _priceChanged += value; }
+        remove { _priceChanged -= value; }
+    }
 
     protected virtual void OnPriceChanged(PriceChangedEventArgs e)
     {
-        PriceChanged?.Invoke(this, e);
+        _priceChanged?.Invoke(this, e);
     }
 
     public decimal Price
