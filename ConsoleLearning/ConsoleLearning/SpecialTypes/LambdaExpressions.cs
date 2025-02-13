@@ -13,9 +13,12 @@ public class LambdaExpressions
     void Foo<T>(T x) { }
     void Bar<T>(Action<T> a) { }
 
+
+
+    void Print(string message = " ") => Console.WriteLine(message);
     public void MyMethod()
     {
-        Func<int, int> sqr = int (int x) => x;
-        var sqr2 = int (int x) => x;
+        Print("Hello");
+        Print();
     }
 }
