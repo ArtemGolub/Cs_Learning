@@ -20,7 +20,22 @@ public class LambdaExpressions
     
     public void MyMethod()
     {
-        Func<int, int> multiplier = static n => n * 2;
-        static int Multiply(int x) => x * 2;
+        Action[] actions333 = new Action[3];
+        Action[] actions123 = new Action[3];
+        
+        for (int i = 0; i < 3; i++)
+            actions333[i] = () => Console.WriteLine(i);
+
+        for (int i = 0; i < 3; i++)
+        {
+            int loopScopedi = i; 
+            actions123[i] = () => Console.WriteLine(loopScopedi);
+        }
+        
+        foreach (Action action in actions333)
+            action();
+        
+        foreach (Action action in actions123)
+            action();
     }
 }
