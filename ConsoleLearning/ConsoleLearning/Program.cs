@@ -1,6 +1,5 @@
-﻿using ConsoleLearning.SpecialTypes;
+﻿using ConsoleLearning.TryCatch;
 
 
-LambdaExpressions lb = new LambdaExpressions();
-
-lb.MyMethod();
+TryCtachPractice tcP = new TryCtachPractice();
+tcP.MyMethod();
