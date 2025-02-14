@@ -1,9 +1,4 @@
-﻿using ConsoleLearning.Enumerations;
+﻿using ConsoleLearning.Nullables;
 
-FibbonachyIterator fibbonachyIterator = new FibbonachyIterator();
-foreach (int fib in 
-         fibbonachyIterator.EvenNumbersOnly(
-             fibbonachyIterator.Fibs(6)))
-{
-    Console.WriteLine(fib);
-}
+NullableTypes nullableTypes = new NullableTypes();
+nullableTypes.MyMethod();
