@@ -4,15 +4,23 @@ namespace ConsoleLearning.TryCatch;
 
 public class TryCtachPractice
 {
-    public void MyMethod()
+    public int Parse(string input)
     {
-        Display(null);
+        int result;
+        if(!TryParse(input, out result))
+        {
+            throw new FormatException();
+        }
+        return result;
     }
-    
-    void Display(string name)
+
+    public bool TryParse(string input, out int result)
     {
-        ArgumentNullException.ThrowIfNull(name);
-        Console.WriteLine(name);
+        if (int.TryParse(input, out result))
+        {
+            return true; // Преобразование успешно
+        }
+        return false; // Преобразование невозможно
     }
 
 }

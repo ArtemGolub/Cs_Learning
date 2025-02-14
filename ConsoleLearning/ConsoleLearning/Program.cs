@@ -2,4 +2,4 @@
 
 
 TryCtachPractice tcP = new TryCtachPractice();
-tcP.MyMethod();
+Console.WriteLine(tcP.Parse("One"));
