@@ -1,6 +1,6 @@
 ﻿using ConsoleLearning.Enumerations;
 
-CustomCollection collection = new CustomCollection();
+FibbonachyIterator fib = new FibbonachyIterator();
 
-foreach (int item in collection)
+foreach (int item in fib.Fibs(6))
     Console.WriteLine(item);
