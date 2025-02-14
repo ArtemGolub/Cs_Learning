@@ -1,5 +1,6 @@
-﻿using ConsoleLearning.TryCatch;
+﻿using ConsoleLearning.Enumerations;
 
+CustomCollection collection = new CustomCollection();
 
-TryCtachPractice tcP = new TryCtachPractice();
-Console.WriteLine(tcP.Parse("One"));
+foreach (int item in collection)
+    Console.WriteLine(item);
