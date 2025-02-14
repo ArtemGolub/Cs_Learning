@@ -1,6 +1,13 @@
 ﻿using ConsoleLearning.Enumerations;
 
-FibbonachyIterator fib = new FibbonachyIterator();
+foreach (string s in Foo())
+    Console.WriteLine(s);
 
-foreach (int item in fib.Fibs(6))
-    Console.WriteLine(item);
+
+IEnumerable<string> Foo()
+{
+    yield return "One";
+    yield return "Two";
+    yield return "Three";
+}
+
