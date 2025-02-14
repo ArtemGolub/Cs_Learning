@@ -1,3 +1,5 @@
+using System.Net;
+
 namespace ConsoleLearning.TryCatch;
 
 public class TryCtachPractice
@@ -9,18 +11,21 @@ public class TryCtachPractice
             byte b = byte.Parse(args[0]);
             Console.WriteLine();
         }
-        catch (IndexOutOfRangeException)
+        catch (FormatException ex)
+        {
+            Console.WriteLine($"{ex} : Please provide at least one argument");
+        }
+        catch (IndexOutOfRangeException) // можно опустить переменную
         {
             Console.WriteLine("Please provide at least one argument");
         }
-        catch (FormatException)
+        catch (WebException ex) when (ex.Status == WebExceptionStatus.Timeout) // Можно создавать фильтры исключений
         {
-            Console.WriteLine("Please provide a valid argument");
+            
         }
-        catch (OverflowException)
+        catch // Опуская переменную перехватываются все исключения
         {
-            Console.WriteLine("You have given me more than a byte");
-        }
+        } 
     }
 
 }
