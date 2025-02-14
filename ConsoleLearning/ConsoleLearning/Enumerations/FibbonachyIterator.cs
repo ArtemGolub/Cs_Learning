@@ -12,4 +12,13 @@ public class FibbonachyIterator
             curFib = newFib;
         }
     }
+
+    public IEnumerable<int> EvenNumbersOnly(IEnumerable<int> sequence)
+    {
+        foreach (int x in sequence)
+        {
+            if ((x % 2) == 0) // можно делить на 2 без остатка
+                yield return x;
+        }
+    }
 }

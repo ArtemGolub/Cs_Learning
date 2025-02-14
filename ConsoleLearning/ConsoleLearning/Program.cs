@@ -1,17 +1,9 @@
 ﻿using ConsoleLearning.Enumerations;
 
-IEnumerable<string> Foo()
+FibbonachyIterator fibbonachyIterator = new FibbonachyIterator();
+foreach (int fib in 
+         fibbonachyIterator.EvenNumbersOnly(
+             fibbonachyIterator.Fibs(6)))
 {
-    yield return "One";
-    yield return "Two";
-    yield return "Three";
+    Console.WriteLine(fib);
 }
-
-string firstElement = null;
-var sequence = Foo();
-using (var enumerator = sequence.GetEnumerator())
-{
-    if (enumerator.MoveNext())
-        firstElement = enumerator.Current;
-}
-Console.WriteLine(firstElement);
