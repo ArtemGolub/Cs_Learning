@@ -28,4 +28,28 @@ public class TryCtachPractice
         } 
     }
 
+    void ReadFile()
+    {
+        StreamReader reader = null;
+        try
+        {
+            reader = File.OpenText("file.txt");
+            if (reader.EndOfStream) return;
+            Console.WriteLine(reader.ReadToEnd());
+        }
+        finally
+        {
+            if(reader != null) reader.Dispose();
+        }
+    }
+
+    void ReadFileUsing()
+    {
+        if (File.Exists("file.txt"))
+        {
+            using var reader = File.OpenText("file.txt");
+            Console.WriteLine(reader.ReadToEnd());
+        }
+    }
+
 }
