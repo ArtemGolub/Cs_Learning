@@ -2,19 +2,25 @@ namespace ConsoleLearning.TryCatch;
 
 public class TryCtachPractice
 {
-    public void MyMethod()
+    public void MyMethod(string[] args)
     {
         try
         {
-            int y = Calc(0);
-            Console.WriteLine(y);
+            byte b = byte.Parse(args[0]);
+            Console.WriteLine();
         }
-        catch (DivideByZeroException ex)
+        catch (IndexOutOfRangeException)
         {
-            Console.WriteLine("x cannot be zero");
-            throw;
+            Console.WriteLine("Please provide at least one argument");
         }
-        Console.WriteLine("Done");
+        catch (FormatException)
+        {
+            Console.WriteLine("Please provide a valid argument");
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("You have given me more than a byte");
+        }
     }
-    int Calc(int x) => 10 / x;
+
 }
