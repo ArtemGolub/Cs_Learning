@@ -1,17 +1,11 @@
-﻿public class TestClass
-{
-    unsafe delegate*<string, int> functionPointer = &GetLength;
-    static int GetLength(string s) => s.Length;
-    public unsafe int MyLength()
-        => functionPointer("Hello world");
-}
-
+﻿using System.Runtime.CompilerServices;
 
 class Program
 {
+    [SkipLocalsInit]
     static void Main()
     {
-        TestClass test = new TestClass();
-        Console.WriteLine(test.MyLength());
+        int[] data = new int[10];
+        Console.WriteLine(data[0]);
     }
 }
