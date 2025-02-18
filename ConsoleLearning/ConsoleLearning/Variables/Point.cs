@@ -2,5 +2,8 @@ namespace ConsoleLearning.Variables;
 
 ref struct Point
 {
-    public int X, Y;
+    public readonly int X, Y;
+
+    public Point(int x, int y) => (X, Y) = (x, y);
+
 }
