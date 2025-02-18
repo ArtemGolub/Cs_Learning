@@ -1,4 +1,4 @@
-﻿using ConsoleLearning.Extension_Methods;
+﻿
+(string, int) bob = GetPerson();
 
-var bob = ("Bob", 23);
-Console.WriteLine(bob.Item1 + bob.Item2);
+(string, int) GetPerson() => ("Bob", 23);
