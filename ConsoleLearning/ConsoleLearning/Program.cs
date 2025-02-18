@@ -1,5 +1,9 @@
 ﻿using ConsoleLearning.Nullables;
 
-int? x = 5;
-int y = (int)x;
-int f = x.Value;
+object o  = "string";
+int? x = o as int?;
+Console.WriteLine(x.HasValue);
+
+int? z = 5;
+int? f = 10;
+bool b = x < f; // true
