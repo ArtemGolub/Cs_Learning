@@ -1,4 +1,5 @@
 ﻿using ConsoleLearning.Nullables;
 
-Nullable<int> i = new Nullable<int>();
-Console.WriteLine(!i.HasValue);
+int? x = 5;
+int y = (int)x;
+int f = x.Value;
