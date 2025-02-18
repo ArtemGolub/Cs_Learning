@@ -1,13 +1,17 @@
-﻿class Program
+﻿public class TestClass
 {
-    static unsafe void Main()
-    {
-        int* array = stackalloc int[5];
+    unsafe delegate*<string, int> functionPointer = &GetLength;
+    static int GetLength(string s) => s.Length;
+    public unsafe int MyLength()
+        => functionPointer("Hello world");
+}
 
-        for (int i = 0; i < 5; i++)
-            array[i] = i * 10;
-        
-        for (int i = 0; i < 5; i++)
-            Console.WriteLine(array[i]);
+
+class Program
+{
+    static void Main()
+    {
+        TestClass test = new TestClass();
+        Console.WriteLine(test.MyLength());
     }
 }
