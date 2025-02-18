@@ -1,38 +1,18 @@
 ﻿
-using System.Security.Cryptography.X509Certificates;
+using System.Runtime.CompilerServices;
 
-
-
-
-public class TuplesPatten
+public class Program
 {
-    int AverageCelsiumTemperature(Season season, bool daytime) =>
-        (season, daytime) switch
-        {
-            (Season.Spring, true) => 20,
-            (Season.Summer, true) => 25,
-            (Season.Fall, true) => 25,
-            (Season.Winter, true) => 20,
-            (Season.Spring, false) => 10,
-            (Season.Summer, false) => 15,
-            (Season.Fall, false) => 15,
-            (Season.Winter, false) => 10,
-        };
+    static void Main() => Foo();
 
-
-    enum Season
+    static void Foo(
+        [CallerMemberName] string? memberName = null,
+        [CallerFilePath] string? filePath = null,
+        [CallerLineNumber] int lineNumber = 0
+        )
     {
-        Spring,
-        Summer,
-        Fall,
-        Winter
+        Console.WriteLine($"{memberName}");
+        Console.WriteLine($"{filePath}");
+        Console.WriteLine($"{lineNumber}");
     }
-    
-    string Print (object obj) => obj switch
-    {
-        Point (0,0) => "Empty Point",
-        Point (var x, var y) when x == y => "Diagonal"
-    };
-    record Point(int X, int Y);
 }
-
