@@ -1,8 +1,5 @@
 ﻿
 
-int? x = null;
-int y = x ?? 5;
-Console.WriteLine(y);
-
-int? a = null , b = 1, c = 2;
-Console.WriteLine(a ?? b ?? c);
+System.Text.StringBuilder sb = null;
+int? length = sb?.ToString().Length ?? 0;
+Console.WriteLine(length);
