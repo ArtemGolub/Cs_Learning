@@ -1,14 +1,12 @@
-﻿using System.Diagnostics;
+﻿namespace ConsoleLearning;
 
-class Program
+internal class Program
 {
-
-    private int a = 1;
-
-#pragma warning disable
+    /// <summary>
+    /// Это метод Main
+    /// </summary>
     static void Main()
     {
-        int a = 1;
+        Console.WriteLine("Hello, world!");
     }
-#pragma warning restore
 }

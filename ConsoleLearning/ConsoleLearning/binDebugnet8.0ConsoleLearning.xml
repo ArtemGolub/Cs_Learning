@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConsoleLearning</name>
+    </assembly>
+    <members>
+        <member name="M:ConsoleLearning.Program.Main">
+            <summary>
+            Это метод Main
+            </summary>
+        </member>
+        <member name="T:Example">
+            <summary>
+            Этот класс демонстрирует работу XML-комментариев.
+            </summary>
+        </member>
+        <member name="M:Example.Add(System.Int32,System.Int32)">
+            <summary>
+            Суммирует два числа.
+            </summary>
+            <param name="a">Первое число.</param>
+            <param name="b">Второе число.</param>
+            <returns>Сумма двух чисел.</returns>
+        </member>
+        <member name="M:Example.GetUserName(System.Int32)">
+            <summary>
+            Возвращает имя пользователя.
+            </summary>
+            <param name="userId">Идентификатор пользователя.</param>
+            <returns>Имя пользователя.</returns>
+            <exception cref="T:System.ArgumentException">Выбрасывается, если userId меньше 1.</exception>
+        </member>
+    </members>
+</doc>
