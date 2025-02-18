@@ -1,31 +1,18 @@
 ﻿
-interface IAddable<T> where T : IAddable<T>
+public interface IAdditionOperators<TSelf, TOther, TResult>
+    where TSelf : IAdditionOperators<TSelf, TOther, TResult>?
 {
-    abstract static T operator +(T a, T b);
-}
-
-record Point(int X, int Y) : IAddable<Point>
-{
-    public static Point operator +(Point left, Point right) 
-        => new Point(left.X + right.X, left.Y + right.Y);
+    static abstract TResult operator +(TSelf left, TOther right);
+    public static virtual TResult operator checked +
+        (TSelf left, TOther right) => left + right;
 }
 
 
 public class Program
 {
-    static T Sum<T>(params T[] values) where T : IAddable<T>
-    {
-        T total = values[0];
-        for (int i = 1; i < values.Length; i++)
-            total += values[i];
-        
-        return total;
-    }
+
     public static void Main()
     {
-        var p1 = new Point(1, 2);
-        var p2 = new Point(3, 4);
-        Point[] points = { p1, p2 };
-        Console.WriteLine(Sum(points));
+
     }
 }
