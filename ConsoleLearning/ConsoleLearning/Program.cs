@@ -1,4 +1,4 @@
 ﻿using ConsoleLearning.Nullables;
 
-NullableTypes nullableTypes = new NullableTypes();
-nullableTypes.MyMethod();
+Nullable<int> i = new Nullable<int>();
+Console.WriteLine(!i.HasValue);
