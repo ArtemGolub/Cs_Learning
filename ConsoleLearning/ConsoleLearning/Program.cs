@@ -1,11 +1,15 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Diagnostics;
 
 class Program
 {
-    [SkipLocalsInit]
     static void Main()
     {
-        int[] data = new int[10];
-        Console.WriteLine(data[0]);
+        TestMethod();
+    }
+
+    [Conditional("DEBUG")]
+    static void TestMethod()
+    {
+        Console.WriteLine("Этот код выполняется только в режиме DEBUG.");
     }
 }
