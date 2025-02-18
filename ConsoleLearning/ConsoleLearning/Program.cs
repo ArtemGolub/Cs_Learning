@@ -2,14 +2,13 @@
 
 class Program
 {
+
+    private int a = 1;
+
+#pragma warning disable
     static void Main()
     {
-        TestMethod();
+        int a = 1;
     }
-
-    [Conditional("DEBUG")]
-    static void TestMethod()
-    {
-        Console.WriteLine("Этот код выполняется только в режиме DEBUG.");
-    }
+#pragma warning restore
 }
