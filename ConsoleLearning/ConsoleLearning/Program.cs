@@ -1,34 +1,31 @@
-﻿interface ICreateRandom<T>
+﻿
+interface IAddable<T> where T : IAddable<T>
 {
-    static abstract T CreateRandom();
+    abstract static T operator +(T a, T b);
 }
 
-record Point(int X, int Y) : ICreateRandom<Point>
+record Point(int X, int Y) : IAddable<Point>
 {
-     static Random _rnd = new ();
-     public static Point CreateRandom() => new ( _rnd.Next(), _rnd.Next());
-     
-
-
+    public static Point operator +(Point left, Point right) 
+        => new Point(left.X + right.X, left.Y + right.Y);
 }
+
 
 public class Program
 {
-
-    static T[] CreateTestData<T> (int count) where T: ICreateRandom<T>
+    static T Sum<T>(params T[] values) where T : IAddable<T>
     {
-        T[] data = new T[count];
-        for (int i = 0; i < count; i++)
-            data[i] = T.CreateRandom();
-    
-        return data;
+        T total = values[0];
+        for (int i = 1; i < values.Length; i++)
+            total += values[i];
+        
+        return total;
     }
-    static void Main()
+    public static void Main()
     {
-        Point[] testData = CreateTestData<Point>(50);
-        foreach (var item in testData)
-        {
-            Console.WriteLine(item.X + " " + item.Y);
-        }
+        var p1 = new Point(1, 2);
+        var p2 = new Point(3, 4);
+        Point[] points = { p1, p2 };
+        Console.WriteLine(Sum(points));
     }
 }
