@@ -1,9 +1,8 @@
-﻿using ConsoleLearning.Nullables;
+﻿
 
-object o  = "string";
-int? x = o as int?;
-Console.WriteLine(x.HasValue);
+int? x = null;
+int y = x ?? 5;
+Console.WriteLine(y);
 
-int? z = 5;
-int? f = 10;
-bool b = x < f; // true
+int? a = null , b = 1, c = 2;
+Console.WriteLine(a ?? b ?? c);
