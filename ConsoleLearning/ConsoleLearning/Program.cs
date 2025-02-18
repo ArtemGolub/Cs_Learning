@@ -1,2 +1,5 @@
-﻿using Point = (int X, int Y);
-Point p = (3, 4);
+﻿var bob = ("Bob", 23);
+(string name, int age) = bob;
+
+Console.WriteLine(name);
+Console.WriteLine(age);
