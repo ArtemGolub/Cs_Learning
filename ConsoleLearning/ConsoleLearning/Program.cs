@@ -1,18 +1,13 @@
-﻿
-public interface IAdditionOperators<TSelf, TOther, TResult>
-    where TSelf : IAdditionOperators<TSelf, TOther, TResult>?
+﻿class Program
 {
-    static abstract TResult operator +(TSelf left, TOther right);
-    public static virtual TResult operator checked +
-        (TSelf left, TOther right) => left + right;
-}
-
-
-public class Program
-{
-
-    public static void Main()
+    static unsafe void Main()
     {
+        int* array = stackalloc int[5];
 
+        for (int i = 0; i < 5; i++)
+            array[i] = i * 10;
+        
+        for (int i = 0; i < 5; i++)
+            Console.WriteLine(array[i]);
     }
 }
