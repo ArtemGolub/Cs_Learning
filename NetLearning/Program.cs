@@ -1,7 +1,7 @@
-﻿using System.Xml;
+﻿using System.ComponentModel;
+using System.Drawing;
 
-string s = XmlConvert.ToString(24);
-Console.WriteLine(s);
+TypeConverter cc = TypeDescriptor.GetConverter(typeof(Color));
 
-int isTrue = XmlConvert.ToInt32(s);
-Console.WriteLine(isTrue);
+Color biege = (Color) cc.ConvertFromString("Beige")!;
+Color purple = (Color) cc.ConvertFromString("Purple")!;
