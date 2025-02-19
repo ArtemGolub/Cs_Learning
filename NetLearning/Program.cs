@@ -1,3 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using NetLearning.Formatting_and_Parsing;
 
-Console.WriteLine("Hello, World!");
+ToString_Parse<int> parser = new ToString_Parse<int>();
+
+int parsingString = 1;
+string? s = parser.Convert(parsingString);
+parsingString = 0;
+Console.WriteLine(parsingString);
+parsingString = parser.DeConvert(s);
+Console.WriteLine(parsingString);
