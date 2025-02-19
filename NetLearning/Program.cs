@@ -1,3 +1,6 @@
-﻿using System.Globalization;
+﻿using System.Numerics;
 
-Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-GB");
+BigInteger googol = BigInteger.Pow(10, 100);
+double g2 = (double) googol;
+BigInteger g3 = (BigInteger) g2;
+Console.WriteLine(g3);
