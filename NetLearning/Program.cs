@@ -1,7 +1,3 @@
-﻿using System.ComponentModel;
-using System.Drawing;
+﻿using System.Globalization;
 
-TypeConverter cc = TypeDescriptor.GetConverter(typeof(Color));
-
-Color biege = (Color) cc.ConvertFromString("Beige")!;
-Color purple = (Color) cc.ConvertFromString("Purple")!;
+Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-GB");
