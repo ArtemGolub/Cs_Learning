@@ -1,7 +1,7 @@
-﻿DateTime now = new DateTime(2023, 10, 21, 15, 30, 45);
+﻿
+Type targetType = typeof(int);
+object source = "42";
+object result = Convert.ChangeType(source, targetType);
 
-Console.WriteLine(now.ToString("yy-MM-dd")); 
-
-Console.WriteLine(now.ToString("HH:mm:ss")); 
-
-Console.WriteLine(now.ToString("dddd HH:mm")); 
+Console.WriteLine(result);
+Console.WriteLine(result.GetType());
