@@ -6,5 +6,6 @@ int parsingString = 1;
 string? s = parser.Convert(parsingString);
 parsingString = 0;
 Console.WriteLine(parsingString);
-parsingString = parser.DeConvert(s);
+parser.DeConvert(s, out int data);
+parsingString = data;
 Console.WriteLine(parsingString);

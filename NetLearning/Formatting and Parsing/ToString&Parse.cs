@@ -8,12 +8,11 @@ public class ToString_Parse<T> where T : IParsable<T>
         return string.IsNullOrEmpty(s) ? throw new Exception("Null or Empty string") : s;
     }
 
-    public T DeConvert(string? s)
+    public void DeConvert(string? s, out T data)
     {
         if(string.IsNullOrEmpty(s))
           throw new Exception("Null or Empty string");
         
-        T data = T.Parse(s, null);
-        return data;
+        data = T.Parse(s, null);
     }
 }
