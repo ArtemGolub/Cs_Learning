@@ -1,7 +1,7 @@
-﻿
-Type targetType = typeof(int);
-object source = "42";
-object result = Convert.ChangeType(source, targetType);
+﻿using System.Xml;
 
-Console.WriteLine(result);
-Console.WriteLine(result.GetType());
+string s = XmlConvert.ToString(24);
+Console.WriteLine(s);
+
+int isTrue = XmlConvert.ToInt32(s);
+Console.WriteLine(isTrue);
