@@ -1,7 +1,9 @@
 namespace NetLearning.Equality;
 
-public class Test<T> where T: IEquatable<T>
+public record Test(int X, int Y)
 {
-    public bool IsEquals(T a, T b) =>
-         a.Equals(b); // упаковка с обобщенным типом T не происходит
+    public virtual bool Equals(Test? t) => 
+        t != null && 
+        t.X == X && 
+        t.Y == Y;
 }
