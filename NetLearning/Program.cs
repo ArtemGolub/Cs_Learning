@@ -1,6 +1,11 @@
-﻿int [] numbers = {3,2,1};
-string[] words = {"three", "two", "one"};
-Array.Sort(numbers, words);
+﻿int[] numbers = {1,2,3,4,5};
+Array.Sort(numbers, (x,y) 
+    => x % 2 == y % 2 
+        ? 0 
+        : x % 2 == 1
+            ? -1
+            : 1
+       );
 
-for (int i = 0; i < numbers.Length; i++)
-    Console.WriteLine($"{i} element: {numbers[i]} , {words[i]}");
+foreach (int number in numbers)
+    Console.Write(number);
