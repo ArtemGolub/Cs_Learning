@@ -1,11 +1,7 @@
-﻿Stack<int> stack = new Stack<int>();
-stack.Push(1);
-stack.Push(2);
-stack.Push(3);
+﻿using System.Collections;
 
-int[] data = stack.ToArray();
-Console.WriteLine(stack.Count);
-Console.WriteLine(stack.Peek());
-Console.WriteLine(stack.Pop());
-Console.WriteLine(stack.Pop());
-Console.WriteLine(stack.Pop());
+var bits = new BitArray(2);
+bits[1] = true;
+
+foreach (var bit in bits)
+    Console.WriteLine(bit);
