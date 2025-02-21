@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿
 
-var bits = new BitArray(2);
-bits[1] = true;
+var letters = new HashSet<char> ("the quick brown fox");
+Console.WriteLine(letters.Contains('t'));
+Console.WriteLine(letters.Contains('j'));
 
-foreach (var bit in bits)
-    Console.WriteLine(bit);
+foreach (char c in letters)
+    Console.Write(c);
