@@ -1,8 +1,7 @@
 ﻿
+Dictionary<string, int> d = new Dictionary<string, int>();
 
-var letters = new HashSet<char> ("the quick brown fox");
-Console.WriteLine(letters.Contains('t'));
-Console.WriteLine(letters.Contains('j'));
-
-foreach (char c in letters)
-    Console.Write(c);
+foreach (KeyValuePair<string, int> kvp in d)
+{
+    
+}
