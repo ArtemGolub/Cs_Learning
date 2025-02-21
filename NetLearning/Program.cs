@@ -1,18 +1,9 @@
-﻿LinkedList<string> tune = new LinkedList<string>();
-tune.AddFirst("do");
-tune.AddLast("so");
+﻿Queue<int> q = new Queue<int>();
+q.Enqueue(10);
+q.Enqueue(20);
 
-tune.AddAfter(tune.First, "re");
-tune.AddAfter(tune.First.Next, "mi");
-tune.AddBefore(tune.Last, "fa");
-
-tune.RemoveFirst();
-tune.RemoveLast();
-
-LinkedListNode<string> miNode = tune.Find("mi");
-tune.Remove(miNode);
-tune.AddFirst(miNode);
-
-foreach (string s in tune)
-    Console.Write(s);
-    
+int[] data = q.ToArray();
+Console.WriteLine(q.Count);
+Console.WriteLine(q.Peek());
+Console.WriteLine(q.Dequeue());
+Console.WriteLine(q.Dequeue());
