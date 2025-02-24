@@ -1,4 +1,4 @@
-using System.Collections.Immutable;
+using System.Collections.Frozen;
 
 namespace NetLearning.Collections;
 
@@ -6,11 +6,12 @@ public class ImmutableCollectionsExample
 {
     public void Test()
     {
-        ImmutableArray<int> myImmutable = ImmutableArray.Create(1, 2, 3);
-        var builder2 = myImmutable.ToBuilder(); // переводим в билдер
-        builder2.Add(4);  // эффективная операция
-        builder2.Remove(2); // эффективная операция
+        int[] numbers = {1, 2, 3};
+        FrozenSet<int> frozen = numbers.ToFrozenSet();
         
-        ImmutableArray<int> myImmutable2 = builder2.ToImmutable(); // возвращаем неизменяемую коллекцию
+        FrozenSet<int> frozenSet;
+        
+        Console.WriteLine(frozen.Contains(2));
+        
     }
 }
