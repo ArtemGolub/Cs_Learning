@@ -1,53 +1,16 @@
-﻿using System.Collections.ObjectModel;
+using NetLearning.Collections;
 
-Zoo zoo = new Zoo();
-zoo.Animals.Add(new Animal("Kangaroo", 10));
-zoo.Animals.Add(new Animal("Lion", 20));
-foreach (Animal animal in zoo.Animals)
-    Console.WriteLine(animal.Name + " " + animal.Popularity + " " + animal.Zoo);
+namespace NetLearning;
 
-public class Animal(string name, int popularity)
+public class Program
 {
-    public string Name { get; set; } = name;
-    public int Popularity { get; set; } = popularity;
-    public Zoo? Zoo { get; internal set; }
-}
-
-public class Zoo
-{
-    public readonly AnimalCollection Animals;
-    public Zoo()
+    public static void Main()
     {
-        Animals = new AnimalCollection(this);
-    }
-}
-
-public class AnimalCollection(Zoo zoo) : Collection<Animal>
-{
-    private Zoo _zoo = zoo;
-
-    protected override void InsertItem(int index, Animal item)
-    {
-        base.InsertItem(index, item);
-        item.Zoo = _zoo;
-    }
-
-    protected override void SetItem(int index, Animal item)
-    {
-        base.SetItem(index, item);
-        item.Zoo = _zoo;
-    }
-
-    protected override void RemoveItem(int index)
-    {
-        this[index].Zoo = null;
-        base.RemoveItem(index);
-    }
-
-    protected override void ClearItems()
-    {
-        foreach (Animal animal in this)
-            animal.Zoo = null;
-        base.ClearItems();
+        Zoo zoo = new Zoo();
+        zoo.Animals.Add(new Animal("Kangoroo", 19));
+        zoo.Animals.Add(new Animal("Lion", 10));
+        
+        Console.WriteLine(zoo.Animals[0].Popularity);
+        Console.WriteLine(zoo.Animals["Lion"].Popularity);
     }
 }
