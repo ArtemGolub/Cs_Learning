@@ -1,15 +1,53 @@
-﻿using System.Collections;
-using System.Collections.Specialized;
+﻿using System.Collections.ObjectModel;
 
-OrderedDictionary oD = new OrderedDictionary
+Zoo zoo = new Zoo();
+zoo.Animals.Add(new Animal("Kangaroo", 10));
+zoo.Animals.Add(new Animal("Lion", 20));
+foreach (Animal animal in zoo.Animals)
+    Console.WriteLine(animal.Name + " " + animal.Popularity + " " + animal.Zoo);
+
+public class Animal(string name, int popularity)
 {
-    { 3, "Three" },
-    { 1, "One" },
-    { 2, "Two" }
-};
+    public string Name { get; set; } = name;
+    public int Popularity { get; set; } = popularity;
+    public Zoo? Zoo { get; internal set; }
+}
 
-for (int i = 0; i < oD.Count; i++)
-    Console.WriteLine(oD[i]?.ToString());
+public class Zoo
+{
+    public readonly AnimalCollection Animals;
+    public Zoo()
+    {
+        Animals = new AnimalCollection(this);
+    }
+}
 
-foreach (DictionaryEntry entry in oD)
-    Console.WriteLine($"Key: {entry.Key}, Value: {entry.Value}");
+public class AnimalCollection(Zoo zoo) : Collection<Animal>
+{
+    private Zoo _zoo = zoo;
+
+    protected override void InsertItem(int index, Animal item)
+    {
+        base.InsertItem(index, item);
+        item.Zoo = _zoo;
+    }
+
+    protected override void SetItem(int index, Animal item)
+    {
+        base.SetItem(index, item);
+        item.Zoo = _zoo;
+    }
+
+    protected override void RemoveItem(int index)
+    {
+        this[index].Zoo = null;
+        base.RemoveItem(index);
+    }
+
+    protected override void ClearItems()
+    {
+        foreach (Animal animal in this)
+            animal.Zoo = null;
+        base.ClearItems();
+    }
+}
