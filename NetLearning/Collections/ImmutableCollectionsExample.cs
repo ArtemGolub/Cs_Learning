@@ -6,10 +6,11 @@ public class ImmutableCollectionsExample
 {
     public void Test()
     {
-        ImmutableList<int> oldList = ImmutableList.Create<int>(1, 2, 3);
-        ImmutableList<int> newList = oldList.AddRange([4,5,6]);
+        ImmutableArray<int> myImmutable = ImmutableArray.Create(1, 2, 3);
+        var builder2 = myImmutable.ToBuilder(); // переводим в билдер
+        builder2.Add(4);  // эффективная операция
+        builder2.Remove(2); // эффективная операция
         
-        Console.WriteLine(oldList.Count);
-        Console.WriteLine(newList.Count);
+        ImmutableArray<int> myImmutable2 = builder2.ToImmutable(); // возвращаем неизменяемую коллекцию
     }
 }
