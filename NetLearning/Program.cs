@@ -12,9 +12,17 @@ public class Program
             "Nick Mason"
         };
 
-        var filtred = names.Where(n => n.Contains("a"));
-        var sorted = filtred.OrderBy(n => n);
-        var query = sorted.Select(n => n.ToUpper());
+
+
+        IEnumerable<string> query =
+            from n in names
+            select n.Replace("a", "").Replace("e", "").Replace("i", "");
+        
+        query = 
+            from n in query
+            where n.Length > 2
+            orderby n
+            select n;
     }
     
 }
