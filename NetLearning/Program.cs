@@ -4,7 +4,7 @@ public class Program
 {
     public static void Main()
     {
-        string[] musos =
+        string[] names =
         {
             "Dabid Gilmour",
             "Roger Waters",
@@ -12,7 +12,9 @@ public class Program
             "Nick Mason"
         };
 
-        IEnumerable<string> query = musos.OrderBy(m => m.Split().Last());
+        var filtred = names.Where(n => n.Contains("a"));
+        var sorted = filtred.OrderBy(n => n);
+        var query = sorted.Select(n => n.ToUpper());
     }
     
 }
