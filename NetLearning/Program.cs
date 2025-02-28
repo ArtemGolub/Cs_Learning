@@ -1,3 +1,5 @@
+using NetLearning.LINQ;
+
 namespace NetLearning;
 
 public class Program
@@ -6,23 +8,28 @@ public class Program
     {
         string[] names =
         {
-            "Dabid Gilmour",
-            "Roger Waters",
-            "Rick Wright",
-            "Nick Mason"
+            "Tom",
+            "Dick",
+            "Harry",
+            "Mary",
+            "Jay"
         };
 
 
 
+         var temp =
+            from name in names
+            select new
+            {
+                Original = name,
+                Vowelless = name.Replace("a", "").Replace("e", "")
+                    .Replace("i", "").Replace("o", "").Replace("u", "")
+            };
+
         IEnumerable<string> query =
-            from n1 in
-            (
-                from n in names
-                select n.Replace("a", "").Replace("e", "").Replace("i", "")
-            )
-            where n1.Length > 2
-            orderby n1
-            select n1;
+            from item in temp
+            where item.Vowelless.Length > 2
+            select item.Original;
     }
     
 }
