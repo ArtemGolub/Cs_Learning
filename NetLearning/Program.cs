@@ -14,22 +14,14 @@ public class Program
             "Mary",
             "Jay"
         };
-
-
-
-         var temp =
-            from name in names
-            select new
-            {
-                Original = name,
-                Vowelless = name.Replace("a", "").Replace("e", "")
-                    .Replace("i", "").Replace("o", "").Replace("u", "")
-            };
-
+        
         IEnumerable<string> query =
-            from item in temp
-            where item.Vowelless.Length > 2
-            select item.Original;
+            from n in names
+            let vowelless = n.Replace("a", "").Replace("e", "")
+                .Replace("i", "").Replace("o", "").Replace("u", "")
+            where vowelless.Length > 2
+            orderby vowelless
+            select n;
     }
     
 }
