@@ -15,12 +15,14 @@ public class Program
 
 
         IEnumerable<string> query =
-            from n in names
-            select n.Replace("a", "").Replace("e", "").Replace("i", "")
-            into novel
-            where novel.Length > 2
-            orderby novel
-            select novel;
+            from n1 in
+            (
+                from n in names
+                select n.Replace("a", "").Replace("e", "").Replace("i", "")
+            )
+            where n1.Length > 2
+            orderby n1
+            select n1;
     }
     
 }
