@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ASP Core Learning")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3c0fb927aeec606a1521588f8307ade4f34b873")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee5d1176d82c8cf229b43e728b399f0ad40e5729")]
 [assembly: System.Reflection.AssemblyProductAttribute("ASP Core Learning")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ASP Core Learning")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
