@@ -1,3 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using ASP_Core_Learning.EFCore;
 
-Console.WriteLine("Hello, World!");
+using var dbContext = new NutShellContext();
+Customer cust = new Customer()
+{
+    Name = "Sara Wells"
+};
+dbContext.Add(cust);
+dbContext.SaveChanges();
+
+Console.WriteLine($"Added {dbContext.Customers
+    .Single(x => x.Name == "Sara Wells")}");
