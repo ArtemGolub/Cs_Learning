@@ -1,23 +1,21 @@
 ﻿using ASP_Core_Learning.EFCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-using var dbContext = new NutShellContext();
+using NutShellContext dbContext = new NutShellContext();
 
-
-var cust = new Customer()
+var saraCustomer = dbContext.Customers
+    .Where(c => c.Name == "Sara");
+foreach (Customer customer in saraCustomer)
 {
-    Name = "Sara Wells"
-};
-dbContext.Add(cust);
+    customer.Name = "Sara Conor";
+}
 dbContext.SaveChanges();
 
-var customer = dbContext.Customers
-    .FirstOrDefault(x => x.Name == "Sara Wells");
 
-if (customer != null)
+foreach (var e in dbContext.ChangeTracker.Entries())
 {
-    Console.WriteLine($"Added {customer.Name}");
+    Console.WriteLine($"{e.Entity.GetType().FullName} is {e.State}");
+    foreach (MemberEntry member in e.Members)
+        Console.WriteLine($"{member.Metadata.Name}: '{member.CurrentValue}' modified: {member.IsModified}");
 }
-else
-{
-    Console.WriteLine("Customer not found.");
-}
+

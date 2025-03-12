@@ -15,10 +15,11 @@ public class NutShellContext: DbContext
                 .IsRequired();
         });
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder
-            .UseSqlServer(@"Server=localhost;Database=customerLearningDb;Trusted_Connection=True;TrustServerCertificate=True")
-            .LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information); // Логирование запросов
-    }
+     =>
+        optionsBuilder.UseSqlServer(
+            @"Server=localhost;
+                Database=customerLearningDb;
+                Trusted_Connection=True;
+                TrustServerCertificate=True");
 
 }
