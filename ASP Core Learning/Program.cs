@@ -1,28 +1,14 @@
 ﻿using ASP_Core_Learning.EFCore;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 using NutShellContext dbContext = new NutShellContext();
 
-var custInfo = dbContext.Customers
-    .Where(c => c.ID == 15)
+var query = dbContext.Customers
     .Select(c => new
     {
-        Name = c.Name,
-        Purchases = c.Purchases
-            .Select(p => new
-            {
-                p.Description,
-                p.Price
-            })
-    })
-    .First();
+        c.Name,
+        c.Purchases
+    });
 
-foreach (var DP in custInfo.Purchases)
-{
-    Console.WriteLine($"{custInfo.Name} bought: {DP.Description} with price: {DP.Price}");
-}
-
-
-
-
+foreach (var row in query)
+    foreach (Purchase p in row.Purchases)
+        Console.WriteLine($"{row.Name} spent {p.Price}");
