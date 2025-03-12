@@ -6,8 +6,9 @@
     {
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Purchase> Purchases { get; set; }
-        
-        protected override void OnModelCreating(ModelBuilder modelBuilder) =>
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.ToTable("Customer", "dbo");
@@ -15,6 +16,17 @@
                     .HasColumnName("Full Name")
                     .IsRequired();
             });
+
+
+            modelBuilder.Entity<Purchase>(entity =>
+            {
+                entity.ToTable("Purchase", "dbo");
+                entity.Property(e => e.Description)
+                    .HasColumnName("Description")
+                    .IsRequired();
+            });
+        }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
