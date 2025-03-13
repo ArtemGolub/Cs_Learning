@@ -19,9 +19,9 @@
 
             modelBuilder.Entity<Purchase>(entity =>
             {
-                entity.ToTable("Purchase", "dbo");
-                entity.Property(e => e.Description)
-                    .HasColumnName("Description").IsRequired();
+                entity.ToTable("Purchase");
+                entity.Property(e => e.Date).IsRequired();
+                entity.Property(e => e.Description).IsRequired();
             });
         }
 
