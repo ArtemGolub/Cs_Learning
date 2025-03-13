@@ -14,4 +14,4 @@ using NutShellContext dbContext = new NutShellContext();
 
 
 IEnumerable<string> query = names
-    .Where(name => name.EndsWith("y"));
+    .Where((n,index) => index % 2 == 0);
