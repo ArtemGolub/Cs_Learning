@@ -1,17 +1,2 @@
-﻿using ASP_Core_Learning.EFCore;
-
-
-string[] names =
-{
-    "Tom",
-    "Dick",
-    "Harry",
-    "Mary",
-    "Jay"
-};
-
-using NutShellContext dbContext = new NutShellContext();
-
-
-IEnumerable<string> query = names
-    .Where((n,index) => index % 2 == 0);
+﻿
+using (FileStream fs = new FileStream("myFile.txt", FileMode.Open));
